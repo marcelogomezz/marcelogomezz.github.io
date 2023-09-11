@@ -6,9 +6,7 @@ const MAN = document.getElementById('man');
 function calcFlujo(peso){
     let resto = peso;
     let flujo = 0;
-    if (resto>30){
-        flujo = (((resto*4)+7)/(resto+90))*2000;
-    }else{
+
     if (resto>20){
         let aux = resto-20;
         flujo += aux*1;
@@ -21,14 +19,14 @@ function calcFlujo(peso){
         resto -= aux;
     }
     flujo += resto*4;
-    }
+    
     return flujo;
 }
 
 CALCULAR.addEventListener('click', () => {
-    const DATO = document.getElementById('peso').value
+    const DATO = document.getElementById('peso').valueAsNumber
     //validamos que se cargue un dato:
-    if (DATO > 0){
+    if (DATO > 0 && DATO <=30){
         ERROR.style.display = 'none'
         let flujo = calcFlujo(DATO);
         let mantenimiento = flujo*1.5;
@@ -36,7 +34,15 @@ CALCULAR.addEventListener('click', () => {
         MAN.innerHTML = 'm+m/2 ' + mantenimiento + ' cc/hr';
         FLU.style.display = 'block';
         MAN.style.display = 'block';
-    } else {
+    }else if (DATO>30){
+        let SuperficieCorporal = ( (DATO * 4) + 7) / (DATO + 90);
+        FLU.innerHTML = SuperficieCorporal*1500 + ' cc/hr';
+        MAN.innerHTML = SuperficieCorporal*2000 + ' cc/hr';
+        FLU.style.display = 'block';
+        MAN.style.display = 'block';
+    }
+     else {
+    
         ERROR.style.display = 'block';
         FLU.style.display = 'none';
         MAN.style.display = 'none';

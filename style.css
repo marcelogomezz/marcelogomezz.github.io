@@ -1,9 +1,14 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
 
 body{
+    background: #f6f5f7; 
     font-family: 'Montserrat', sans-serif;
+    color: #3E363F;
+    background-image: url('images/background1.jpg'); /* Ruta relativa a la carpeta de imágenes */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
-
 #contenedor{
     width: 900px;
     height: 500px;
@@ -16,8 +21,7 @@ body{
     overflow: hidden; 
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
       0 10px 10px rgba(0,0,0,0.22);
-  }
-
+}
 #calculadora{
     background: white;
     /* Con estas 3 lineas vamos a hacer que los divs queden lado a lado */
@@ -27,14 +31,13 @@ body{
 }
 
 #detalle{
-    background: #4171ff;
+    background: #0da58f;
     /* Con estas 3 lineas vamos a hacer que los divs queden lado a lado */
     width: 50%;
     height: 100%;
     float: left;
     color: #f6f5f7;
 }
-
 .contenido{
     /* Estas tres lineas van a centrar el contenido verticalmente dentro de cada div */
     position: relative;
@@ -43,7 +46,6 @@ body{
     overflow: hidden;
     padding: 40px;
 }
-
 input {
 	width: 70%;
     padding: 12px 15px;
@@ -52,21 +54,21 @@ input {
 }
 
 button {
-    margin: 20px;
-    font-size: 15px;
+  font-size: 15px;
 	font-weight: bold;
 	padding: 12px 45px;
 	border-radius: 30px;
-	background-color: #4171ff;
-	border: 1px solid #4171fff;
+	background-color: #1ed9bd;
+	border: 1px solid #1ed9bd;
 	color: #FFFFFF;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	transition: transform 20ms ease-in;
+    margin-top: 5%;
 }
 
 button:active {
-	transform: scale(0.95);
+	transform: scale(0.90);
 }
 
 #error{
@@ -76,7 +78,7 @@ button:active {
 }
 
 .resultado{
-    color: #0A81D1;
+    color: #1ed9bd;
     font-weight: bold;
     font-size: 25px;
     margin-bottom: 5px;
